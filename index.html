@@ -59,7 +59,8 @@ var config = {
       title: "Building Age",
       data: {
         dataSet: "data/blocks_energy.csv",
-        field: "AVGBLDGAGE"
+        field: "AVGBLDGAGE",
+		method: d3.csv,
       },
       
     },
@@ -68,6 +69,7 @@ var config = {
       data: {
         dataSet: "data/blocks_energy.csv",
         field: "TOT_POP",
+		method: d3.csv,
       },
     },  
     thrms: {
@@ -75,6 +77,7 @@ var config = {
       data: {
         dataSet: "data/blocks_energy.csv",
         field: "THRMS_TOT_",
+		method: d3.csv,
     },
     },
     kwh: {
@@ -82,8 +85,8 @@ var config = {
       data: {
         dataSet: "data/blocks_energy.csv",
         field: "KWH_TOT_SQ",
+		method: d3.csv,
       },
-      format: { short: f,long: f,input: inp},
     },
     },
   
