@@ -16,12 +16,12 @@
      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
      <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 
-</head>	
+</head>
 <body>
     <div id="content" class="container">
         <div id="map"></div>
 </div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.2/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3/2.10.0/d3.v2.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.2/backbone-min.js"></script>
@@ -46,7 +46,7 @@ var config = {
     },
     geo: {
       url: "data/blocks_sub.json",
-      name_field: "GEOID",
+      name_field: "NAME",
       id_field: "GEOID"
     }
   },
@@ -59,7 +59,8 @@ var config = {
       title: "Building Age",
       data: {
         dataSet: "data/blocks_energy.csv",
-        field: "AVGBLDGAGE"
+        field: "AVGBLDGAGE",
+		method: d3.csv,
       },
       
     },
@@ -68,27 +69,24 @@ var config = {
       data: {
         dataSet: "data/blocks_energy.csv",
         field: "TOT_POP",
-        colorscale: d3.scale.linear().domain([1,10,20]).range(["green","yellow", "red"]).interpolate(d3.cie.interpolateLab)
+		method: d3.csv,
       },
-      format: { short: f,long: f, input: inp},
     },  
     thrms: {
       title: "Therms per Square Foot",
       data: {
         dataSet: "data/blocks_energy.csv",
         field: "THRMS_TOT_",
-        colorscale: d3.scale.linear().domain([1,10,20]).range(["green","yellow", "red"]).interpolate(d3.cie.interpolateLab)
-      },
-      format: { short: f,long: f,input: inp},
+		method: d3.csv,
+    },
     },
     kwh: {
-      title: "KWH's per Square Foot",
+		title: "KWH's per Square Foot",
       data: {
         dataSet: "data/blocks_energy.csv",
         field: "KWH_TOT_SQ",
-        colorscale: d3.scale.linear().domain([1,10,20]).range(["green","yellow", "red"]).interpolate(d3.cie.interpolateLab)
+		method: d3.csv,
       },
-      format: { short: f,long: f,input: inp},
     },
     },
   
