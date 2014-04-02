@@ -1,5 +1,7 @@
 ##Map Help
 
+[Live demo.](http://danswick.com/demotracts/)
+
 This map displays census tracts in Cook County, Illinois. The default map shows population by tract (green is lower population, red is higher), but you can do a couple of this to manipulate the data being visualized.
 
 There are several dimensions you can visualize:
